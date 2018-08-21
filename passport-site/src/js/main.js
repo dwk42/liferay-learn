@@ -5,7 +5,7 @@
 
 
 
-    // iPad and iPod detection  
+    // iPad and iPod detection
     var isiPad = function() {
         return (navigator.platform.indexOf("iPad") != -1);
     };
@@ -543,7 +543,7 @@
         if (currencyCode == 'USD') {
             $(".passportButton").show();
             $(".passportLink").css('display', 'none');
-        } 
+        }
         else {
             $(".passportLink").show();
             $(".passportButton").css('display', 'none');
