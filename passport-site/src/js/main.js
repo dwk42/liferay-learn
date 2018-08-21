@@ -551,7 +551,7 @@
     var updateCurrencies = function(currencyCode) {
         $(".listPrice").html(currencies[currencyCode].listPrice);
         $(".promoPrice").html(currencies[currencyCode].promoPrice);
-        if (currencyCode == 'USD' || currencyCode == 'ALT_USD') {
+        if (currencyCode == 'USD') {
             $(".passportButton").show();
             $(".passportLink").css('display', 'none');
         } else {
