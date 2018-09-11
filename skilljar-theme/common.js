@@ -120,3 +120,26 @@ function popup(url) {
     newwindow.focus();
   }
 }
+
+//Exit fullscreen when video is finished
+if ($('.sj-page-lesson')) {
+  var exitedFullScreen = false;
+  if (!exitedFullScreen) {
+    $(document).ajaxComplete(function() {
+      wistiaEmbed.bind("end", function(t) {
+        if (document.fullscreenElement || document.webkitFullscreenElement || document.mozFullScreenElement || document.msFullscreenElement) {
+          if (document.exitFullscreen) {
+              document.exitFullscreen();
+          } else if (document.webkitExitFullscreen) {
+              document.webkitExitFullscreen();
+          } else if (document.mozCancelFullScreen) {
+              document.mozCancelFullScreen();
+          } else if (document.msExitFullscreen) {
+              document.msExitFullscreen();
+          }
+          exitedFullScreen = true;
+        }
+      });
+    });
+  }
+}
